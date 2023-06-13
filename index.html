@@ -15,9 +15,9 @@
         <div class="container">
             <h1> Email Random List</h1>
 
-            <ul>
-                <li v-for="(email) in emailGroup">
-                    {{email}}
+            <ul v-for="(user) in emailGroup">
+                <li v-if="email" >
+                    {{user}}
                 </li>
             </ul>
         </div>
