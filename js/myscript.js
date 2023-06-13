@@ -3,9 +3,7 @@ const { createApp } = Vue
     createApp({
         data() {
         return {
-            message: 'Hello Vue!',
-
-            
+            email : '',
             emailGroup : [],
         }
     },
@@ -19,9 +17,12 @@ const { createApp } = Vue
 
         getNewRandomEmail(){
             axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-            .then(function (response){
+            .then( (response) => {
                 const result = response.data;
                 console.log(result.response);
+                this.email = result.response;
+                this.emailGroup.push(this.email);
+                console.log(this.emailGroup);
             })
         },
 
