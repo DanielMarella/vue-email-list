@@ -22,17 +22,26 @@ const { createApp } = Vue
                 console.log(result.response);
                 this.email = result.response;
                 this.emailGroup.push(this.email);
-                console.log(this.emailGroup);
             })
         },
 
+        addRandomEmails(){
+            for (let i = 0; i < 9; i++){
+                this.getNewRandomEmail();
+            }
+            console.log(this.emailGroup);
+        }
+
+
 
     },
-
+    
     created(){
         this.getNewRandomEmail();
+        this.addRandomEmails();
     }
-
-
+    
+    
 }).mount('#app')
+
 

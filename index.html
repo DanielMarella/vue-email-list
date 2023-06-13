@@ -16,7 +16,9 @@
             <h1> Email Random List</h1>
 
             <ul>
-                <li>{{email}}</li>
+                <li v-for="(email) in emailGroup">
+                    {{email}}
+                </li>
             </ul>
         </div>
 
